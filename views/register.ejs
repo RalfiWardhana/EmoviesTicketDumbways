@@ -1,0 +1,31 @@
+<%- include("partials/header") %>
+<%- include("partials/navbar") %>
+
+<div class="container mt-5">
+    <div class="shadow-lg p-5 mb-5 bg-body rounded">
+        <h1 class="mb-5"> Silahkan lakukan Registrasi</h1>
+        <form method="post" action="/register">
+        <div class="mb-3">
+            <label for="title" class="form-label">Masukan Nama</label>
+            <input type="text" class="form-control" id="title" name="nameRegister">
+        </div>   
+        <div class="mb-3">
+            <label for="title" class="form-label">Masukan Email</label>
+            <input type="text" class="form-control" id="title" name="emailRegister">
+        </div>
+        <div class="mb-3">
+            <label for="number" class="form-label">Masukan Password</label>
+            <input type="password" class="form-control" id="number" name="passwordRegister">
+        </div>
+        <div class="mb-3">
+            <label for="number" class="form-label">Konfirmasi Password</label>
+            <input type="password" class="form-control" id="number" name="konfirmasiPassword">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Silahkan Masuk</button>
+        </form>
+    </div>
+</div>

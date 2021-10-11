@@ -1,0 +1,49 @@
+<%- include("partials/header") %>
+<%- include("partials/navbar") %>
+
+<div class="container mt-5">
+    <div class="shadow-lg p-5 mb-5 bg-body rounded">
+        <h1 class="mb-5">Add Movie</h1>
+        <form method="post" action="/add" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Movie Title</label>
+            <input type="text" class="form-control" id="title" name="addTitle">
+        </div>   
+        <div class="mb-3">
+            <label for="title" class="form-label">Movie hour</label>
+            <input type="text" class="form-control" id="title" name="addHour">
+        </div>
+        <div class="mb-3">
+            <label for="number" class="form-label">Price</label>
+            <input type="text" class="form-control" id="number" name="addPrice">
+        </div>
+        <div class="mb-3">
+            <label for="number" class="form-label">Venue</label>
+            <input type="text" class="form-control" id="number" name="addVenue">
+        </div>
+        <div class="mb-3 mt-3">
+            <input class="form-control" type="file" name="image">
+        </div>
+        <div class="mb-3">
+            <label for="number" class="form-label">Date show</label>
+            <input type="date" class="form-control" id="number" name="addDate">
+        </div>
+        <div class="mb-3">
+            <label for="number" class="form-label">Time show</label>
+            <input type="time" class="form-control" id="number" name="addTime">
+        </div>
+        <div class="mb-3">
+            <label for="number" class="form-label">Movie Genre</label>
+            <input type="text" class="form-control" id="number" name="addMovieGenre">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Adding Movie</button>
+        </form>
+    </div>
+</div>
+
+
+<%- include("partials/footer") %>

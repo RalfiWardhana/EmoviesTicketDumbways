@@ -1,0 +1,34 @@
+<%- include("partials/header") %>
+<%- include("partials/navbar") %>
+
+<div class="container mt-5">
+    <div class="shadow-lg p-5 mb-5 bg-body rounded">
+        <h1 class="mb-5">Change Movie</h1>
+        <form method="post" action="/edit" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Movie Title</label>
+            <input type="text" class="form-control" id="title" name="addTitle" value="<%= data[1][0].name  %> ">
+        </div>   
+        <input type="hidden" name="id" value="<%= data[0]%>"> 
+        <div class="mb-3">
+            <label for="title" class="form-label">Movie hour</label>
+            <input type="text" class="form-control" id="title" name="addHour" value="<%= data[1][0].movie_hour %> ">
+        </div>
+        <div class="mb-3 mt-3">
+            <input class="form-control" type="file" name="image">
+        </div>
+        <div class="mb-3">
+            <label for="number" class="form-label">Movie Genre</label>
+            <input type="text" class="form-control" id="number" name="addMovieGenre" value="<%= data[1][0].type_name %> ">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Changing Movie</button>
+        </form>
+    </div>
+</div>
+
+
+<%- include("partials/footer") %>

@@ -1,0 +1,24 @@
+<%- include("partials/header") %>
+<%- include("partials/navbar") %>
+
+<div class="container mt-5">
+    <div class="row justify-content-center mb-5">
+        <div class="col text-center">
+            <a href="/add-genres" class="btn btn-primary">Adding Genres</a>
+        </div>
+    </div>
+    <div class="row justify-content-center mb-5">
+        <% for( let i = 0; i < hasil.length; i++ ) { %> 
+          <div class="col mb-3">
+            <div class="card" style="width: 18rem; display: inline-block;">
+              <img src="<%= hasil[i].photo %>" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><%= hasil[i].name %></h5>
+                  <a href="/edit-genres/<%= hasil[i].id %>" class="btn btn-success">Change Genre</a>
+                  <a href="/delete-genres/<%= hasil[i].id %>" class="btn btn-danger">Delete Genre</a>
+              </div>
+            </div>
+          </div>
+        <% } %>
+    </div>     
+</div>

@@ -1,0 +1,89 @@
+<%- include("partials/header") %>
+<%- include("partials/navbar") %>
+
+
+<div class="container mt-5">
+    <div class="shadow-lg p-5 mb-5 bg-body rounded">
+        <h1 class="mb-5"> Silahkan lakukan Pembayaran</h1>
+        <form method="POST" action="/payment">
+        <% if (orderMovie == false) { %>
+            <div class="mb-3">
+                <label for="title" class="form-label">Movie Title</label>
+                <input type="text" class="form-control" id="title" name="MovieTitle">
+            </div>
+            <div class="mb-3">
+                <label for="number" class="form-label">Amount of tickets</label>
+                <input type="text" class="form-control" id="number" name="amount">
+            </div>
+            <div class="mb-3">
+                <label for="room" class="form-label">Price</label>
+                <input type="text" class="form-control" id="room" name="price">
+            </div>
+            <div class="mb-3">
+                <label for="room" class="form-label">Duration</label>
+                <input type="text" class="form-control" id="room" name="duration">
+            </div>
+              <div class="mb-3">
+                <label for="time" class="form-label">Time</label>
+                <input type="text" class="form-control" id="time" name="time">
+            </div>
+            
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Silahkan membayar</button>
+        <% } else if (orderMovie == true) { %>
+            <div class="mb-3">
+                <label for="title" class="form-label">Movie Title</label>
+                <input type="text" class="form-control" id="title" name="MovieTitle" value="<%= results[0].name %>">
+            </div>
+            <input type="hidden" value="<%= results[0].id %>" name="ticketId">
+            <div class="mb-3">
+                <label for="number" class="form-label">Amount of tickets</label>
+                <input type="text" class="form-control" id="number" name="amount">
+            </div>
+            <div class="mb-3">
+                <label for="room" class="form-label">Price</label>
+                <input type="text" class="form-control" id="room" name="price" value="<%= results[0].price%>">
+            </div>
+            <div class="mb-3">
+                <label for="room" class="form-label">Duration</label>
+                <input type="text" class="form-control" id="room" name="duration" value="<%= results[0].movie_hour%>">
+            </div>
+              <div class="mb-3">
+                <label for="time" class="form-label">Time</label>
+                <input type="text" class="form-control" id="time" name="time" value="<%= results[0].time_show%>">
+            </div>
+            
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Silahkan membayar</button>
+        <% } %> 
+        </form>
+    </div>
+    <% if (clear == true) { %>
+      <div class="row justify-content-center">
+        <% for( let i = 0; i < clearMovie[0].amount; i++ ) { %>
+         <div class="col-3 justify-content-center">
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Ticket</div>
+                <div class="card-body">
+                    <h5 class="card-title mb-3"><%= clearMovie[0].title %></h5>
+                    <p class="card-text">Welcome, please come to the cinema on time, Enjoy watching. Recommended to buy popcorn</p>
+                    <p class="card-text"><%= clearMovie[0].price %></p>
+                    <p class="card-text"><%= clearMovie[0].duration %></p>
+                    <p class="card-text"><%= clearMovie[0].time %></p>
+                    <a href="#" class="btn btn-light">Print Ticket</a>
+                </div>
+            </div>
+        </div>
+        <% } %>     
+      </div>
+    <% } %>
+ </div>
+
+
+    <%- include("partials/footer") %>

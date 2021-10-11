@@ -1,0 +1,22 @@
+<%- include("partials/header") %>
+<%- include("partials/navbar") %>
+
+<div class="container mt-5">
+    <div class="shadow-lg p-5 mb-5 bg-body rounded">
+        <h1 class="mb-5">Add Genre</h1>
+        <form method="post" action="/genre-add-success" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Genre Name</label>
+            <input type="text" class="form-control" id="title" name="genreName">
+        </div>      
+        <div class="mb-3 mt-3">
+            <input class="form-control" type="file" name="image">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Adding Genre</button>
+        </form>
+    </div>
+</div>
